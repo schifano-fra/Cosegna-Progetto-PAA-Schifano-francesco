@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Creato da: Schifano Francesco, 5469994
 
 #include "UIMainMenu.h"
 #include "Components/Button.h"
