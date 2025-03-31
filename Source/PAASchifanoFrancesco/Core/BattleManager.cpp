@@ -424,6 +424,11 @@ bool ABattleManager::TryAIAttack(AUnitBase* AIUnit)
         {
             UE_LOG(LogTemp, Warning, TEXT("AI %s attacca %s"), *AIUnit->GetName(), *PlayerUnit->GetName());
             AIUnit->AttackUnit(PlayerUnit); // Esegue l'attacco
+            // Aggiorna la barra della vita del difensore
+            if (GameMode && GameMode->GetStatusGameWidget() && !PlayerUnit->IsDead())
+            {
+                GameMode->GetStatusGameWidget()->UpdateUnitHealth(PlayerUnit, PlayerUnit->GetHealthPercent());
+            }
 
             ATile* TargetTile = GridManager->FindTileAtLocation(PlayerUnit->GetActorLocation());
             FString TileName = TargetTile ? TargetTile->GetTileIdentifier() : TEXT("???");

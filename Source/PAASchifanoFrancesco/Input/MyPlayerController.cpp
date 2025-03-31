@@ -435,7 +435,12 @@ void AMyPlayerController::ExecuteAttack(AUnitBase* Attacker, AUnitBase* Defender
 
     // Esegue l’attacco tra le due unità
     Attacker->AttackUnit(Defender);
-
+    // Aggiorna la barra della vita del difensore
+    if (StatusGame && !Defender->IsDead())
+    {
+        StatusGame->UpdateUnitHealth(Defender, Defender->GetHealthPercent());
+    }
+    
     // Crea il messaggio da mostrare nello storico
     ATile* DefenderTile = GridManager->FindTileAtLocation(Defender->GetActorLocation());
     FString TileName = DefenderTile ? DefenderTile->GetTileIdentifier() : TEXT("???");
@@ -450,8 +455,8 @@ void AMyPlayerController::ExecuteAttack(AUnitBase* Attacker, AUnitBase* Defender
     // Log dell'attacco
     UE_LOG(LogTemp, Warning, TEXT(" %s ha attaccato %s"), *Attacker->GetName(), *Defender->GetName());
 
-    // Controlla se va eseguito il contrattacco (solo se l'attaccante è uno Sniper)
-    if (Attacker->IsRangedAttack())
+    // Controlla se va eseguito il contrattacco (solo se l'attaccante è uno Sniper e il difensore è ancora vivo)
+    if (Attacker->IsRangedAttack() && !Defender->IsDead())
     {
         const bool DefenderIsSniper = Defender->IsRangedAttack();
         const bool DefenderIsBrawlerClose =
