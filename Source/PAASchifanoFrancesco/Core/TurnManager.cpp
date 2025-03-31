@@ -283,7 +283,7 @@ void UTurnManager::UpdateTurnUI()
 
 /**
  * Descrizione:
- * Questo metodo viene utilizzato **durante la fase di battaglia** (EGamePhase::EBattle) per verificare se il
+ * Questo metodo viene utilizzato durante la fase di battaglia(EGamePhase::EBattle) per verificare se il
  * giocatore umano ha completato tutte le azioni delle proprie unità.
  * È chiamato ogni volta che un'unità effettua un'azione (movimento o attacco).
  *

@@ -4,7 +4,7 @@
 * 
 * Descrizione generale:
 * Questa classe gestisce la logica di combattimento del gioco, coordinando i turni dell'AI,
-* il movimento delle unità e gli attacchi. Funge da intermediario tra il GameMode,
+* il movimento delle unità e gli attacchi. Funziona da intermediario tra il GameMode,
 * il TurnManager, il GridManager e le singole unità.
 * 
 * Principali funzionalità:
@@ -71,8 +71,6 @@ ABattleManager::ABattleManager()
 * 2. Verifica la presenza del MovementManager
 * 3. Avvia il primo turno
 * 4. Aggiorna lo stato delle unità nell'UI
-*
-* 
 */
 void ABattleManager::StartBattle()
 {
@@ -151,7 +149,7 @@ void ABattleManager::PrepareAITurn()
 * 2. Dopo un delay, mostra le tile di attacco
 * 3. In base al livello di difficoltà, sceglie se:
 *    - Muoversi casualmente (Easy)
-*    - Muoversi verso il nemico più vicino e attaccare (Normal/Hard)
+*    - Muoversi verso il nemico più vicino e attaccare (Hard)
 * 4. Passa alla prossima unità o termina il turno AI
 */
 void ABattleManager::ProcessNextAIUnit()
@@ -386,7 +384,7 @@ void ABattleManager::TryAIRandomMove(AUnitBase* AIUnit)
     TArray<ATile*> MovableTiles = GridManager->GetValidMovementTiles(AIUnit); // Ottiene le tile valide
     if (MovableTiles.Num() == 0) return; // Nessuna tile disponibile
 
-    int32 Index = FMath::RandRange(1, AIUnit->GetMovementRange()); // Sceglie un indice casuale
+    int32 Index = FMath::RandRange(0, MovableTiles.Num() - 1); // Sceglie un indice casuale
     ATile* Destination = MovableTiles[Index]; // Tile di destinazione
 
     TArray<ATile*> Path = GridManager->GetPathToTile(AIUnit, Destination); // Percorso da seguire

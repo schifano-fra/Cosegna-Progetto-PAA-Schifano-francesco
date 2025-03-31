@@ -56,7 +56,6 @@ protected:
 	/**
 	 * Metodo: BeginPlay
 	 * 
-	 * Chiamato automaticamente all'avvio del gioco.
 	 * Recupera riferimenti iniziali come GameMode e MovementManager.
 	 */
 	virtual void BeginPlay() override;

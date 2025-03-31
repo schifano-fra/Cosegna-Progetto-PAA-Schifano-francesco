@@ -18,11 +18,11 @@ class PAASCHIFANOFRANCESCO_API UUIMainMenu : public UUserWidget
 public:
     // Variabile per il TextBlock del titolo
     UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-    class UTextBlock* TitleText;
+    UTextBlock* TitleText;
 
     // Variabile per il Button di avvio
     UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-    class UButton* StartGameButton;
+    UButton* StartGameButton;
 
     // Funzione che viene chiamata quando il widget viene costruito
     virtual void NativeConstruct() override;

@@ -38,7 +38,7 @@ public:
 	UFUNCTION()
 	void SetHasPawn(bool Value) { bHasPawn = Value; }
 
-	/** Ritorna la posizione 3D dove far spawnare una pedina sopra la tile */
+	/** Ritorna la posizione dove far spawnare una pedina sopra la tile */
 	UFUNCTION()
 	FVector GetPawnSpawnLocation() const;
 
@@ -57,7 +57,6 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	/** Tick dell’attore. Attualmente non utilizzato. */
 	virtual void Tick(float DeltaTime) override;
 
 private:

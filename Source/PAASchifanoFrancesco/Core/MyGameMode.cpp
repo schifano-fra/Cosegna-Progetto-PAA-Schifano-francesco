@@ -111,7 +111,7 @@ void AMyGameMode::BeginPlay()
             // Genera gli ostacoli sulla griglia
             GridManager->GenerateObstacles();
             // Log di conferma creazione
-            UE_LOG(LogTemp, Warning, TEXT("✅ GridManager creato all'avvio!"));
+            UE_LOG(LogTemp, Warning, TEXT("GridManager creato all'avvio!"));
         }
     }
 
@@ -129,25 +129,6 @@ void AMyGameMode::BeginPlay()
     // Avvia la fase iniziale del gioco (menu principale)
     HandleInitialPhase();
 }
-
-// Creato da: Schifano Francesco, 5469994
-
-#include "MyGameMode.h"
-#include "BattleManager.h"
-#include "PlacementManager.h"
-#include "TurnManager.h"
-#include "PAASchifanoFrancesco/UI/UICOinFlip.h"
-#include "PAASchifanoFrancesco/UI/GameOverWidget.h"
-#include "PAASchifanoFrancesco/UI/UIMainMenu.h"
-#include "PAASchifanoFrancesco/UI/SelectPawn.h"
-#include "PAASchifanoFrancesco/Input/CameraPawn.h"
-#include "PAASchifanoFrancesco/Input/MyPlayerController.h"
-#include "PAASchifanoFrancesco/Units/UnitMovementManager.h"
-#include "Blueprint/UserWidget.h"
-#include "Engine/World.h"
-#include "GameFramework/PlayerController.h"
-#include "Blueprint/WidgetBlueprintLibrary.h"
-#include "UObject/ConstructorHelpers.h"
 
 /**
  * Metodo: HandleInitialPhase

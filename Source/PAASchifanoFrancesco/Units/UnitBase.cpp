@@ -172,6 +172,10 @@ void AUnitBase::AttackUnit(AUnitBase* Target)
 	}
 	else
 	{
+		if (!StatusGame)
+		{
+			UE_LOG(LogTemp, Error, TEXT("StatusGame è NULL in AttackUnit!"));
+		}
 		// Altrimenti, aggiorna la barra vita nel widget di status
 		StatusGame->UpdateUnitHealth(Target, Target->GetHealthPercent());
 	}

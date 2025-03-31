@@ -23,8 +23,7 @@
 AGridManager::AGridManager()
 {
     PrimaryActorTick.bCanEverTick = false; // Disabilitiamo il tick perché la griglia non richiede aggiornamenti per frame
-
-    CurrentSelectedUnit = nullptr; // Nessuna unità selezionata inizialmente
+    
     TurnManager = nullptr;         // Il TurnManager verrà recuperato nel BeginPlay
     bAttackGridVisible = false;    // Nessuna griglia d’attacco è visibile all’avvio
 

@@ -1,4 +1,4 @@
-
+// Creato da: Schifano Francesco, 5469994
 
 #pragma once
 
@@ -9,14 +9,8 @@
 
 // Forward declaration della classe base delle unità
 class AUnitBase;
-
-// Forward declaration della classe base delle unità
 class AGridManager;
-
-// Forward declaration della classe base delle unità
 class AMyGameMode;
-
-// Forward declaration della classe base delle unità
 class UTurnManager;
 
 /*
@@ -41,16 +35,16 @@ public:
 	// Inizializza il turno dell'IA
 	void PrepareAITurn();
 
-	// Prova a far attaccare un'unità IA
+	// Prova a far attaccare un'unità AI
 	bool TryAIAttack(AUnitBase* AIUnit);
 
-	// Prova a far muovere un'unità IA verso il nemico più vicino
+	// Prova a far muovere un'unità AI verso il nemico più vicino
 	void TryAIMove(AUnitBase* AIUnit);
 
-	// Prova a far muovere un'unità IA in modo casuale
+	// Prova a far muovere un'unità AI in modo casuale
 	void TryAIRandomMove(AUnitBase* AIUnit);
 
-	// Restituisce il nemico più vicino a una determinata unità IA
+	// Restituisce il nemico più vicino a una determinata unità AI
 	AUnitBase* FindNearestEnemy(AUnitBase* AIUnit);
 
 private:
@@ -63,16 +57,16 @@ private:
 	// Riferimento al GameMode principale del gioco
 	AMyGameMode* GameMode;
 
-	// Indice dell'unità IA attualmente in fase di elaborazione
+	// Indice dell'unità AI attualmente in fase di elaborazione
 	int32 CurrentAIIndex;
 
-	// Lista di unità IA che devono ancora agire durante il turno corrente
+	// Lista di unità AI che devono ancora agire durante il turno corrente
 	TArray<AUnitBase*> AIUnitsToProcess;
 
 	// Gestisce la logica della prossima unità IA nel turno corrente
 	void ProcessNextAIUnit();
 
-	// Riferimento al TurnManager, gestisce i turni tra player e IA
+	// Riferimento al TurnManager, gestisce i turni tra player e AI
 	UPROPERTY()
 	UTurnManager* TurnManager;
 

@@ -131,9 +131,6 @@ void ATile::SetTileIdentifier(const FString& NewIdentifier)
 	TileIdentifier = NewIdentifier;
 }
 
-/**
- * Tick dell’attore. Disabilitato.
- */
 void ATile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

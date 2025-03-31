@@ -1,8 +1,6 @@
 // Creato da: Schifano Francesco, 5469994
 
 #pragma once
-
-// Includi i file base di Unreal
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 
@@ -24,6 +22,7 @@ class USelectPawn;
 class ABattleManager;
 class APlacementManager;
 class UTurnManager;
+class AUnitMovementManager;
 
 // Enum che rappresenta le fasi del gioco
 UENUM()
@@ -75,8 +74,7 @@ public:
 
 	// Delegato notificato quando cambia la fase di gioco
 	FOnGamePhaseChanged OnGamePhaseChanged;
-
-	// Override di BeginPlay per inizializzazione
+	
 	virtual void BeginPlay() override;
 
 	// Gestione delle varie fasi del gioco
@@ -107,16 +105,16 @@ public:
 
 	// Riferimenti ai manager principali (Movement, Placement, Turni, Battaglia)
 	UPROPERTY()
-	class APlacementManager* PlacementManager;
+	APlacementManager* PlacementManager;
 
 	UPROPERTY()
-	class UTurnManager* TurnManager;
+	UTurnManager* TurnManager;
 
 	UPROPERTY()
-	class ABattleManager* BattleManager;
+	ABattleManager* BattleManager;
 
 	UPROPERTY()
-	class AUnitMovementManager* GlobalMovementManager;
+	AUnitMovementManager* GlobalMovementManager;
 
 	// Widget attivi durante il gioco (status, indicatori, info)
 	UPROPERTY()

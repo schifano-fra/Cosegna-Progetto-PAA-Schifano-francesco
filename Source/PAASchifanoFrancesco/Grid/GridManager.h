@@ -30,8 +30,7 @@ public:
 
 	// Costruttore
 	AGridManager();
-
-	// Override del tick, non utilizzato in questo progetto
+	
 	virtual void Tick(float DeltaTime) override;
 
 	// Genera la griglia rettangolare con dimensioni e tile specificate
@@ -64,12 +63,6 @@ public:
 	// Riferimento alle tile attualmente evidenziate
 	UPROPERTY()
 	TArray<ATile*> HighlightedTiles;
-
-	// Metodo invocato quando un'unità viene cliccata
-	void OnUnitClicked(AUnitBase* TargetUnit);
-
-	// Rimuove la griglia d'attacco
-	void HideAttackGrid();
 
 	// Imposta posizione finale dell'unità e aggiorna tile occupate
 	void FinalizeUnitMovement(AUnitBase* Unit, ATile* DestinationTile);
@@ -130,9 +123,6 @@ private:
 	// Riferimento alla tile sotto l’unità selezionata
 	UPROPERTY()
 	ATile* TileUnderSelectedUnit = nullptr;
-
-	// Riferimento all’unità attualmente selezionata
-	AUnitBase* CurrentSelectedUnit;
 
 	// Riferimento al TurnManager per accedere al turno corrente
 	UPROPERTY()

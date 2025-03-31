@@ -24,7 +24,6 @@ AMyPlayerController::AMyPlayerController()
 }
 
 /**
- * Chiamato automaticamente all'inizio del gioco.
  * Recupera il GameMode attivo e inizializza il GridManager e MovementManager.
  * Attiva la possibilità di rilevare eventi di click e di mouse-over.
  * Collega il metodo OnUnitMovementFinished al delegato del MovementManager,
@@ -130,7 +129,7 @@ void AMyPlayerController::OnLeftClick()
  * 
  * Metodo eseguito durante la fase di piazzamento quando il giocatore clicca su una tile.
  * Se è il turno del player e l’attore cliccato è una tile valida, si notifica al PlacementManager
- * di procedere al piazzamento dell’unità selezionata su quella tile.
+ * di procedere al piazzamento dell’unità selezionata su quella tile. Il click concesso è solo il click sinistro.
  */
 void AMyPlayerController::HandlePlacementClick(AActor* HitActor)
 {
@@ -150,7 +149,6 @@ void AMyPlayerController::HandlePlacementClick(AActor* HitActor)
 }
 
 /**
-* * 
  * Questo metodo gestisce il comportamento dei click (sinistro o destro) del giocatore durante la fase di battaglia.
  * È progettato per distinguere i seguenti casi:
  * 1. Click sinistro su tile valida → se un’unità player è selezionata e può muoversi, viene ordinato il movimento.
@@ -197,7 +195,7 @@ void AMyPlayerController::HandleBattleClick(AActor* HitActor, bool isLeft)
                 SelectedUnit = nullptr;
             }
         }
-        return; // Fine gestione TILE
+        return; // Fine gestione
     }
 
     // --- CASO 2: Il giocatore clicca su un'UNITÀ ---
@@ -478,7 +476,7 @@ void AMyPlayerController::ExecuteAttack(AUnitBase* Attacker, AUnitBase* Defender
             TileName = AttackerTile ? AttackerTile->GetTileIdentifier() : TEXT("???");
             FString DefenderType = Defender->IsRangedAttack() ? TEXT("Sniper") : TEXT("Brawler");
 
-            GameMode->AddMoveToHistory(FString::Printf(TEXT("AI: %s attacks %s damage %d"), *DefenderType, *TileName, CounterDamage));
+            GameMode->AddMoveToHistory(FString::Printf(TEXT("AI: %s counterattack %s damage %d"), *DefenderType, *TileName, CounterDamage));
         }
 
         // Controlla se l'attaccante è morto dopo il contrattacco

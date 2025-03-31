@@ -1,8 +1,8 @@
-#include "Brawler.h"  // Include del file header della classe ABrawler
-#include "PAASchifanoFrancesco/Core/MyGameMode.h"  // Per ottenere il GameMode
-#include "PAASchifanoFrancesco/Core/TurnManager.h" // Per accedere al turno corrente
-#include "Kismet/GameplayStatics.h"                // Per ottenere il GameMode in modo sicuro
-#include "UObject/ConstructorHelpers.h"            // Per il caricamento statico di asset
+#include "Brawler.h"
+#include "PAASchifanoFrancesco/Core/MyGameMode.h"
+#include "PAASchifanoFrancesco/Core/TurnManager.h"
+#include "Kismet/GameplayStatics.h"
+#include "UObject/ConstructorHelpers.h"
 
 class AMyGameMode;  // Forward declaration opzionale (già incluso comunque)
 

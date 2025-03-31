@@ -74,7 +74,4 @@ private:
 
 	/** Metodo interno per piazzare un'unità del giocatore sulla tile selezionata */
 	void PlacePlayerPawn(ATile* ClickedTile);
-
-	/** Verifica se la fase di piazzamento è conclusa (usabile in futuro) */
-	void CheckPlacementCompletion();
 };

@@ -220,7 +220,7 @@ void APlacementManager::PlaceAIPawn()
     // Ottiene la posizione di spawn dalla tile selezionata
     FVector SpawnLocation = ChosenTile->GetPawnSpawnLocation();
 
-    // Parametri di spawn per l'attore (unità IA)
+    // Parametri di spawn per l'attore (unità AI)
     FActorSpawnParameters SpawnParams;
     // Forza lo spawn anche in caso di collisioni
     SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;

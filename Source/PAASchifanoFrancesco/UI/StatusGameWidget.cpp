@@ -166,7 +166,7 @@ void UStatusGameWidget::UpdateUnitHealth(AUnitBase* Unit, float NewHealthPercent
 	{
 		Bar->SetFillColorAndOpacity(FLinearColor::Red); // Bassa vita
 	}
-	else if (NewHealthPercent < 0.7f)
+	else if (NewHealthPercent < 0.9f)
 	{
 		Bar->SetFillColorAndOpacity(FLinearColor::Yellow); // Vita media
 	}
@@ -174,6 +174,7 @@ void UStatusGameWidget::UpdateUnitHealth(AUnitBase* Unit, float NewHealthPercent
 	{
 		Bar->SetFillColorAndOpacity(FLinearColor::Green); // Alta vita
 	}
+	Bar->InvalidateLayoutAndVolatility();
 }
 
 /**
